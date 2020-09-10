@@ -1,16 +1,13 @@
 //import FECLogo from "../public/images/fec-logo.png";
 import React from "react";
 import CardList from "./CardList";
-//import styled from "styled-components";
+import styled from "styled-components";
+import LinksHeader from './LinksHeader'
 
 const LinkSearcher = ()=>{
     return(
-        <>
-            <header>
-                <div>
-                    <input type="text" placeholder="Search Links by tags here..."></input>
-                </div>    
-            </header>
+        <LinkWrapper>
+            <LinksHeader></LinksHeader>
             <section>
                 <h2>56 
                     <span>
@@ -22,8 +19,17 @@ const LinkSearcher = ()=>{
                 </h2>
                 <CardList/>
             </section>
-        </> 
+        </LinkWrapper> 
     )
 }
 
+
+const LinkWrapper = styled.div`
+  background-color: #7BEBBF;
+  width:100%;
+`;
+
+
+
 export default LinkSearcher;
+
