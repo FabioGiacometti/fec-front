@@ -2,15 +2,25 @@ import FECLogo from "../public/images/fec-logo.png";
 import React from "react";
 import ReactDOM from "react-dom";
 import styled from "styled-components";
+import LinkSearcher from './LinkSearcher'
 
 const App = () => {
   return (
-    <StyledApp>
+
+    <div>
+      <LinkSearcher>
+      </LinkSearcher>
+    </div>
+
+/*     <StyledApp>
       <Welcome>
         <Logo src={FECLogo} alt="fec-logo" />
         <Title>BIENVENIDO AL FRONTENDCAFÉ</Title>
+        <a href="#">Buscador</a> 
       </Welcome>
-    </StyledApp>
+      
+    </StyledApp> */
+
   );
 };
 
@@ -22,6 +32,9 @@ const StyledApp = styled.div`
   height: 100vh;
   background-color: #63c29d;
 `;
+
+
+
 
 const Welcome = styled.div`
   display: flex;
