@@ -1,32 +1,63 @@
 import React from "react";
 import CardList from "./CardList";
 import styled from "styled-components";
+import FECIsoLogo from "../public/images/iso-logo.jpg";
+import Waves from "../public/images/background-waves.svg";
 
 const LinksHeader = ()=>{
     return (
         <HeaderWrapper>
-            <SearchBar></SearchBar>
+            <IsoLogo src={FECIsoLogo}/>
+            <Title>SEARCH LINKS ON THE DATABASE</Title>
+            <SearchBar/>
+            <WavesHr/>
         </HeaderWrapper>
     )
 }
 
 
 const HeaderWrapper = styled.div`
-
-    width:80%
-    display:flex;
-    align-items: center; 
-    justify-content: center; 
-    flex-direction: column; 
-    background-color:white;
-    height:250px;
+    position:relative;
+    flex-direction: column;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom:117px;
 
 `;
 
-const SearchBar= styled.input`
-border:2px solid black;
-margin:0 auto;
+const IsoLogo= styled.img`
+    position:absolute;
+    top: 24px;
+    left: 34px;
+    margin-bottom:40px;
+    
+`;
 
+const Title = styled.h2`
+    color:#1AAA72;
+    margin-top: 80px;
+`;
+
+const SearchBar= styled.input`
+border: 2px solid #7BEBBF;
+height: 45px;
+width: 60%;
+margin-bottom:40px;
+`;
+
+//probar con pasar esto a un div+image
+
+const WavesHr =styled.div`
+    position: absolute;
+    width: 100%;
+    background-image: url(/background-waves.e68eb3a8.svg);
+    height: 120px;
+    bottom: -94px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 `;
 
 
