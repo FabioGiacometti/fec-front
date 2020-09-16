@@ -3,13 +3,14 @@ import CardList from "./CardList";
 import styled from "styled-components";
 import FECIsoLogo from "../public/images/iso-logo.jpg";
 import Waves from "../public/images/background-waves.svg";
+import SearchBar from "./Searcbar";
 
 const LinksHeader = ()=>{
     return (
         <HeaderWrapper>
             <IsoLogo src={FECIsoLogo}/>
             <Title>SEARCH LINKS ON THE DATABASE</Title>
-            <SearchBar/>
+            <SearchBar />
             <WavesHr/>
         </HeaderWrapper>
     )
@@ -36,16 +37,11 @@ const IsoLogo= styled.img`
 `;
 
 const Title = styled.h2`
-    color:#1AAA72;
+    color:var(--main-dark);
     margin-top: 80px;
 `;
 
-const SearchBar= styled.input`
-border: 2px solid #7BEBBF;
-height: 45px;
-width: 60%;
-margin-bottom:40px;
-`;
+
 
 //probar con pasar esto a un div+image
 

@@ -2,42 +2,20 @@ import React from "react";
 import styled from "styled-components";
 import SearchCard from "./SearchCard";
 
-const CardList = () => {
-  const arr = [
-    {
-      titulo: "titulo",
-      imagen:
-        "http://www.houstonpettalk.com/wp-content/uploads/2009/01/grass-300x200.jpg",
-      descripcion:
-        "Esta es una descripcion generica que podria ser un poco mas copada pero no me sale mejor",
-      url: "http://www.google.com/",
-    },
-    {
-      titulo: "titulo",
-      imagen:
-        "http://www.houstonpettalk.com/wp-content/uploads/2009/01/grass-300x200.jpg",
-      descripcion:
-        "Esta es una descripcion generica que podria ser un poco mas copada pero no me sale mejor",
-      url: "http://www.google.com/",
-    },
-    {
-      titulo: "titulo",
-      imagen:
-        "http://www.houstonpettalk.com/wp-content/uploads/2009/01/grass-300x200.jpg",
-      descripcion:
-        "Esta es una descripcion generica que podria ser un poco mas copada pero no me sale mejor",
-      url: "http://www.google.com/",
-    },
-  ];
+const CardList = (props) => {
 
+  console.log("props: ", props.cards)
+  const arr = props.cards;
+  
   const cardList = arr.map((card, index) => {
-    console.log(card, " / ", index);
+    console.log("card: ", card)
     return (
       <SearchCard
-        titulo={card.titulo}
-        descripcion={card.descripcion}
-        imagen={card.imagen}
-        url={card.url}
+        title={card.title}
+        description={card.description}
+        image={'https://imagenesgratis.com.ar/wp-content/uploads/2020/01/cat-feline-gato-siames-scaled.jpg'}
+        link={card.link}
+        tags={card.tags}
         key={card.index}
       />
     );
@@ -57,6 +35,7 @@ const CardList = () => {
 };
 
 const CardContainer = styled.div`
+  width:80%;
   margin-top: 30px;
   display: flex;
   flex-direction: column;
