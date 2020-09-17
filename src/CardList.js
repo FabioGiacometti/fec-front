@@ -26,7 +26,9 @@ const CardList = (props) => {
         <CardContainerTitle>
           {arr.length}
           <br></br>
-          <span>links <br></br>encontrados</span>
+          <span>
+            links <br></br>encontrados
+          </span>
         </CardContainerTitle>
       ) : (
         <CardContainerTitle>
@@ -51,14 +53,18 @@ const CardContainer = styled.div`
 `;
 
 const CardContainerTitle = styled.h2`
-display:flex;
-align-items:center;
+  margin-top: -10px;
+  line-height: 70px;
+  display: flex;
+  align-items: center;
   color: white;
   text-align: left;
-  font-size: 2em;
+  font-size: 5em;
 
-  span{
-    font-size:2em
+  span {
+    font-size: 0.5em;
+    line-height: 72%;
+    margin-left: 3px;
   }
 `;
 

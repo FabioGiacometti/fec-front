@@ -28,7 +28,7 @@ const HeaderWrapper = styled.div`
 
 const IsoLogo = styled.img`
   position: absolute;
-  top: 24px;
+  top: 10px;
   left: 34px;
   margin-bottom: 40px;
   height:50px;
@@ -47,9 +47,10 @@ const WavesHr = styled.div`
   background-image: url(/background-waves.e68eb3a8.svg);
   height: 90px;
   bottom: -80px;
-  background-position: center;
+  background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
+  filter: drop-shadow(1px 1px 1px #00000005)
 `;
 
 export default LinksHeader;
