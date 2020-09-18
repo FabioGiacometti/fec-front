@@ -3,6 +3,7 @@ import CardList from "./CardList";
 import styled from "styled-components";
 import LinksHeader from "./LinksHeader";
 import Axios from "axios";
+import Footer from "./Footer";
 
 const LinkSearcher = () => {
   const API = `https://links-bot-cloud-functions.vercel.app/api/get-links?tags=frontend`;
@@ -43,14 +44,18 @@ const LinkSearcher = () => {
   
   return (
     <LinkWrapper>
-      {console.log("esto es searchTerm", searchTerm)}
       <LinksHeader setSearchTerm={setSearchTerm} searchTerm={searchTerm} buscar={buscar}/>
       {!isLoading ? <CardList cards={links} /> : <div className="loader">Loading...</div>}
+      <Footer/>
     </LinkWrapper>
   );
 };
 
 const LinkWrapper = styled.div`
+overflow-x: hidden;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
 min-height: 150vh;
 background: linear-gradient(180deg, #227655 0%, #C7FAE6 100%);
 width: 100%;

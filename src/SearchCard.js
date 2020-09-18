@@ -4,23 +4,22 @@ import styled from "styled-components";
 const SearchCard = (props) => {
   const { title, image, description, link } = props;
 
-  
-
-  
 
   return (
     <Card>
+      {console.log("tags: ", props)}
       <Imagen src={image} />
       <CardBody>
       <CardTitle>{title}</CardTitle>
         <p>{description}</p>
         <a href={link}>{link}</a>
+
       </CardBody>
     </Card>
   );
 };
 
-const Card = styled.div `
+const Card = styled.a `
   width:80%;
   max-width: 800px
   max-height: 180px;

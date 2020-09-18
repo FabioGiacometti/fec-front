@@ -2,7 +2,7 @@ import React from "react";
 import CardList from "./CardList";
 import styled from "styled-components";
 import FECIsoLogo from "../public/images/iso-logo.png";
-import Waves from "../public/images/background-waves.svg";
+import Waves from "../public/images/Vector.png";
 import SearchBar from "./Searcbar";
 
 const LinksHeader = (props) => {
@@ -11,7 +11,7 @@ const LinksHeader = (props) => {
       <IsoLogo src={FECIsoLogo} />
       <Title>Buscador de links</Title>
       <SearchBar props={props} />
-      <WavesHr />
+      <WavesHr src={Waves}/>
     </HeaderWrapper>
   );
 };
@@ -19,7 +19,7 @@ const LinksHeader = (props) => {
 const HeaderWrapper = styled.div`
   position: relative;
   flex-direction: column;
-  background-color: #DAFFF1;
+  background-color: #c8f1e1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,16 +41,15 @@ const Title = styled.h2`
 
 //probar con pasar esto a un div+image
 
-const WavesHr = styled.div`
+const WavesHr = styled.img`
   position: absolute;
-  width: 100%;
-  background-image: url(/background-waves.e68eb3a8.svg);
-  height: 90px;
-  bottom: -80px;
-  background-position: top center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  filter: drop-shadow(1px 1px 1px #00000005)
+  height: auto;
+  top: 213px;
+  filter: drop-shadow(1px 1px 1px #00000005);
+
+  @media (max-width: 368px){
+    display:none
+  }
 `;
 
 export default LinksHeader;

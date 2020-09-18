@@ -42,8 +42,7 @@ const CardList = (props) => {
 
 const CardContainer = styled.div`
   margin: 0 auto;
-  width: 80%;
-  margin-top: 30px;
+  // margin-top: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -53,7 +52,7 @@ const CardContainer = styled.div`
 `;
 
 const CardContainerTitle = styled.h2`
-  margin-top: -10px;
+  margin: -20px 20px 10px;
   line-height: 70px;
   display: flex;
   align-items: center;

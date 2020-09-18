@@ -47,6 +47,7 @@ const SearchInput = styled.input`
   height: 45px;
   width: 100%;
   border-radius: 3px 0 0 3px;
+  padding-left: 7px;
 
   &::placeholder {
     font-weight: bold;
@@ -59,13 +60,19 @@ const SearchInput = styled.input`
 
 const Eraser = styled.span`
   position: absolute;
-  right: 81px;
+  right: 95px;
   top: 2px;
   color: var(--main-dark);
   font-size: 2em;
+  transition: all 200ms;
 
+  
   @media (max-width: 768px) {
-    right: 15px;
+    right: 88px;
+  }
+
+  &:active{
+    transform: scale(2)
   }
 `;
 
