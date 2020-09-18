@@ -12,18 +12,27 @@ const SearchBar = (props) => {
     props.props.setSearchTerm(event.target.value);
   };
 
+  const handleKeyDown =(event)=> {
+    const buscar = document.getElementById("buscar")
+    if (event.key === 'Enter') {
+      buscar.click()
+    }
+  }
+
   return (
     <SearchForm>
       <SearchInput
         value={props.props.searchTerm}
         onChange={handleChange}
         placeholder="Buscar en la base"
+        onKeyDown={handleKeyDown}
       />
+
       {props.props.searchTerm ? (
         <Eraser onClick={() => props.props.setSearchTerm("")}>×</Eraser>
       ) : null}
       <SearchButton onClick={() => props.props.buscar(props.props.searchTerm)}>
-        {vw >= 768 ? "Buscar" : <Buscar src={SearchIcon}></Buscar>}
+        {vw >= 590 ? "Buscar" : <Buscar src={SearchIcon}></Buscar>}
       </SearchButton>
     </SearchForm>
   );
@@ -33,12 +42,12 @@ const SearchForm = styled.div`
   position: relative;
   // height: 45px;
   width: 60%;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   display: flex;
 
-  @media (max-width: 768px) {
+  @media (max-width: 590px) {
     // flex-direction: column;
-    width: calc(100% - 20px);
+    width: calc(100% - 40px);
   }
 `;
 
@@ -67,7 +76,7 @@ const Eraser = styled.span`
   transition: all 200ms;
 
   
-  @media (max-width: 768px) {
+  @media (max-width: 590px) {
     right: 88px;
   }
 
@@ -86,7 +95,7 @@ const SearchButton = styled.button`
   height: 45px;
   width: 90px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 590px) {
   }
 
   &:focus {

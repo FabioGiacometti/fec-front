@@ -23,17 +23,17 @@ const CardList = (props) => {
   return (
     <CardContainer>
       {arr.length ? (
-        <CardContainerTitle>
+        <h2 className="cardContainerTitle">
           {arr.length}
           <br></br>
           <span>
             links <br></br>encontrados
           </span>
-        </CardContainerTitle>
+        </h2>
       ) : (
-        <CardContainerTitle>
+        <h2 className="cardContainerTitle">
           Estos son los ultimos links agregados.
-        </CardContainerTitle>
+        </h2>
       )}
       {cardList}
     </CardContainer>
@@ -49,21 +49,25 @@ const CardContainer = styled.div`
   align-items: center;
   postition: relative;
   padding-bottom: 100px;
-`;
+  
+  .cardContainerTitle{
+    margin: -20px 20px 10px;
+    line-height: 70px;
+    display: flex;
+    align-items: center;
+    color: white;
+    text-align: left;
+    font-size: 5em;
+  
+    span {
+      font-size: 0.5em;
+      line-height: 72%;
+      margin-left: 3px;
+    }
 
-const CardContainerTitle = styled.h2`
-  margin: -20px 20px 10px;
-  line-height: 70px;
-  display: flex;
-  align-items: center;
-  color: white;
-  text-align: left;
-  font-size: 5em;
-
-  span {
-    font-size: 0.5em;
-    line-height: 72%;
-    margin-left: 3px;
+    @media(max-width: 590px){
+      align-self: flex-start
+    }
   }
 `;
 
