@@ -21,7 +21,6 @@ const LinkSearcher = () => {
     .then((results) => results.json())
     .then((data) => {
       const { body } = data;
-      /* console.log("body: ", body); */
       setSearchResults(data);
       setLinks(data.body);
     });
@@ -29,15 +28,12 @@ const LinkSearcher = () => {
   
   const buscar = (searchTerm) => {
     // setIsloading(true)
-      console.log("me ejecute con este searchterm",searchTerm)
       fetch(`https://links-bot-cloud-functions.vercel.app/api/get-links?tags=${searchTerm}`)
       .then((results) => results.json())
       .then((data) => {
         const { body } = data;
-        console.log("body: ", body);
         setSearchResults(data);
         setLinks(data.body);
-        console.log("esto es data",links)
         // setIsloading(false)
     });
   };

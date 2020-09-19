@@ -15,7 +15,7 @@ const FooterCopy = styled.div`
 padding-bottom: 50px;
 justify-content:center;
 text-align: center;
-font-size : 2em;
+font-size : 1.3em;
 color: var(--main-dark);
 background-color: #63C29D;
 color: white;

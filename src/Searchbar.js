@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import SearchIcon from "../public/images/buscar.png";
 
 const SearchBar = (props) => {
+
+
   /* const [searchTerm, setSearchTerm] = useState(""); */
   const vw = Math.max(
     document.documentElement.clientWidth || 0,
@@ -12,20 +14,23 @@ const SearchBar = (props) => {
     props.props.setSearchTerm(event.target.value);
   };
 
-  const handleKeyDown =(event)=> {
-    const buscar = document.getElementById("buscar")
-    if (event.key === 'Enter') {
-      buscar.click()
+  const handleEnter = (event) => {
+    if (event.key === "Enter") {
+      props.props.buscar(props.props.searchTerm);
+    } else if (event.keyCode === 27) {
+      props.props.setSearchTerm("");
     }
-  }
+  };
 
   return (
     <SearchForm>
       <SearchInput
+        autoFocus
         value={props.props.searchTerm}
         onChange={handleChange}
         placeholder="Buscar en la base"
-        onKeyDown={handleKeyDown}
+        onKeyDown={handleEnter}
+        autofocus
       />
 
       {props.props.searchTerm ? (
@@ -75,13 +80,12 @@ const Eraser = styled.span`
   font-size: 2em;
   transition: all 200ms;
 
-  
   @media (max-width: 590px) {
     right: 88px;
   }
 
-  &:active{
-    transform: scale(2)
+  &:active {
+    transform: scale(2);
   }
 `;
 
