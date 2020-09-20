@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import SearchCard from "./SearchCard";
+import Cards from "./Cards";
 
 const CardList = (props) => {
   const arr = props.cards;
 
   const cardList = arr.map((card, index) => {
     return (
-      <SearchCard
+      <Cards
         title={card.title}
         description={card.description}
         image={
@@ -48,7 +48,8 @@ const CardContainer = styled.div`
   justify-content: center;
   align-items: center;
   postition: relative;
-  padding-bottom: 100px;
+  padding-bottom: 180px;
+  padding-top: 100px;
   
   .cardContainerTitle{
     margin: -20px 20px 10px;

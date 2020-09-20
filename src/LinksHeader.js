@@ -25,6 +25,8 @@ const HeaderWrapper = styled.div`
   align-items: center;
   margin-bottom: 80px;
 
+
+
   @media(max-width: 590px){
     margin-bottom: 40px;
   }
@@ -55,13 +57,23 @@ const HeaderWrapper = styled.div`
       .wavesHr{
         position: absolute;
         height: auto;
+        width:100%;
         top: 193px;
         filter: drop-shadow(1px 1px 1px #00000005);
       
         @media (max-width: 590px){
+          width:120%;
+          top:181px;
+      
+        }
+
+        @media (max-width: 480px){
           display:none;
+          
       
         }
 `;
+
+
 
 export default LinksHeader;

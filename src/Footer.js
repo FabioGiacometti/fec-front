@@ -5,9 +5,9 @@ import footerVector from "../public/images/footerVector.png"
 const Footer =()=>{
     return(
         <FooterCopy>
-            <FooterVector src={footerVector}/>
+             <FooterVector src={footerVector}/>
             2020 - Front End Cafe
-            </FooterCopy>
+        </FooterCopy>
     )
 }
 
@@ -27,6 +27,10 @@ const FooterVector = styled.img`
 position: relative;
 height: auto;
 bottom: 53px;
+width:100%;
+width: 100%;
+height: 100%;
+min-height: 55px;
 
 @media(max-width: 368px){
     display:none;

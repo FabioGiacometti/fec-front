@@ -5,7 +5,7 @@ import LinksHeader from "./LinksHeader";
 import Axios from "axios";
 import Footer from "./Footer";
 
-const LinkSearcher = () => {
+const AppLinkSearch = () => {
   const API = `https://links-bot-cloud-functions.vercel.app/api/get-links?tags=frontend`;
   const [searchResults, setSearchResults] = useState({});
   const [searchTerm, setSearchTerm] = useState("");
@@ -17,24 +17,26 @@ const LinkSearcher = () => {
   };
 
   useEffect(() => {
+    setIsloading(true)
     fetch(API)
     .then((results) => results.json())
     .then((data) => {
       const { body } = data;
       setSearchResults(data);
       setLinks(data.body);
+      setIsloading(false)
     });
   }, []);
   
   const buscar = (searchTerm) => {
-    // setIsloading(true)
+    setIsloading(true)
       fetch(`https://links-bot-cloud-functions.vercel.app/api/get-links?tags=${searchTerm}`)
       .then((results) => results.json())
       .then((data) => {
-        const { body } = data;
+        const { body } = data
         setSearchResults(data);
         setLinks(data.body);
-        // setIsloading(false)
+        setIsloading(false)
     });
   };
   
@@ -52,8 +54,10 @@ overflow-x: hidden;
 display: flex;
 flex-direction: column;
 justify-content: space-between;
-min-height: 150vh;
+min-height: 100vh;
 background: linear-gradient(180deg, #227655 0%, #C7FAE6 100%);
 width: 100%;
 `;
-export default LinkSearcher;
+
+
+export default AppLinkSearch;

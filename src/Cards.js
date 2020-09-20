@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-const SearchCard = (props) => {
+const Cards = (props) => {
   const { title, image, description, link, tags } = props;
+
 
   return (
     <Card href={link} target="blank">
@@ -131,4 +132,4 @@ h2{
   }
   `;
 
-export default SearchCard;
+export default Cards;
