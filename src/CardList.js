@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import Cards from "./Cards";
-
+import {useCard } from './context/cardsContext'
 const CardList = (props) => {
-  const arr = props.cards;
+  const {links} = useCard();
 
-  const cardList = arr.map((card, index) => {
+  const cardList = links.map((card, index) => {
     return (
       <Cards
         title={card.title}
@@ -22,9 +22,9 @@ const CardList = (props) => {
 
   return (
     <CardContainer>
-      {arr.length ? (
+      {links.length ? (
         <h2 className="cardContainerTitle">
-          {arr.length}
+          {links.length}
           <br></br>
           <span>
             links <br></br>encontrados
